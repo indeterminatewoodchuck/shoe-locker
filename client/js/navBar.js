@@ -2,7 +2,7 @@ var NavBar = React.createClass({
   render: function() {
     return (
       <div>
-        This is the Top Bar!
+        We are Shoe Locker
       </div>
     );
   }
