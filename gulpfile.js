@@ -19,6 +19,9 @@ var path = {
 
 gulp.task('copy', function(){
   gulp.src(path.HTML)
+  .pipe(htmlreplace({
+    'js': 'src/' + path.OUT
+  }))
     .pipe(gulp.dest(path.DEST));
 });
 
