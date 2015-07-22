@@ -10,6 +10,7 @@ var chatButton = document.getElementById('chat-button');
 
 var createChatSession = function() {
   // should we pass in company name or other identifier?
+  console.log("CREATE CHAT SESSION");
   var comm = new Icecomm('ZZ2RA1DsHd9xdCqdoeJ8Wwra5A5fUKipAVrvzX6vOGHlLiAdO');
   var chatWindow = document.createElement('div');
   chatButton.parentNode.appendChild(chatWindow);
@@ -18,9 +19,9 @@ var createChatSession = function() {
   var socket = io('http://localhost:3000');
 
   // will need to emit some kind of customer number?
-  socket.emit('customerRequest');
+  socket.emit('customerRequest', 'ShoeLocker');
 
-  socket.on('joinRoom', function(data) {
+  socket.on('customerRoom', function(data) {
     setupVideoChatListeners(comm, chatWindow, data);
   });
 };
