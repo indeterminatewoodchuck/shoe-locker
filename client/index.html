@@ -17,13 +17,32 @@
     <!-- endbuild --> 
 
     <div>
-      <button id="supportal-init-button">I need help!</input>
+      <input id="org-input"></input>
+      <button id="org-submit" onclick="connectSupportal()">Supportal Setup</button>
+    </div>
+    <div>
+      <div>
+        <button id="supportal-init-button">I need help!</button>
+      </div>
       <div id="supportal-window"></div>
     </div>
 
     <script src='http://hidden-sands-2214.herokuapp.com/library'></script>
     <script>
-      var support = new Supportal("ShoeLocker");
+
+      var support;
+      var connectSupportal = function() {
+        // var chatWindow = document.getElementById('supportal-window');
+        // console.log("connect Supportal");
+        // for (var i = 0; i < chatWindow.children.length; i++) {
+        //   console.log(chatWindow.childNodes[i]);
+        //   chatWindow.removeChild(chatWindow.childNodes[i]);
+        // }
+
+        var input = document.getElementById('org-input');
+        support = new Supportal(input.value);
+
+      }
     </script>
   </body>
 </html>
